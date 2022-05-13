@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<style>
+.headBox {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.headBox li {
+  float: right;
+}
+
+.headBox .HomeMenu{
+    float: left;
+}
+
+.headBox li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.headBox li a:hover {
+  background-color: #111111;
+}
+
+a img {
+    padding: 0;
+    margin: 0;
+}
+</style>
+<body>
+    <header>
+        <ul class="headBox">
+            <li class="HomeMenu">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/800px-SNice.svg.png" alt="GLAD" width="16" height="16">
+                </a>
+            </li>
+            <li class="HomeMenu"> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="HomeMenu"> <a asp-area="" asp-controller="Doctor" asp-action="FeverCheck">Doctor</a></li>
+            <li class="HomeMenu"> <a asp-area="" asp-controller="GamePlace" asp-action="GuessingGame">Guessing Game</a></li>
+
+            <li> <a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li> <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <li> <a asp-area="" asp-controller="Home" asp-action="Projects">Projects</a></li>
+        </ul>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer style="position: fixed; bottom: 5px;">
+  <p>Tobias Forsberg
+      @DateTime.UtcNow.ToString("dd/MM-yyyy")
+  </p>
+    </footer>
+</body>
+</html>

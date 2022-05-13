@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "FeverCheck";
+
+}
+@if (ViewBag.Fever != "")
+{
+    <h1>@ViewBag.Fever</h1>
+}
+
+
+<h2>Fever</h2>
+<form action="FeverCheck" method="post">
+    <input id="tempField" type="text" name="temp" />
+    <input id="tempButton" type="submit" value="Feber?"/>
+</form>

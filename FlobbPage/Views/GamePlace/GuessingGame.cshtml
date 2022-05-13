@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "GuessingGame";
+
+}
+@if (ViewBag.toHigh == 1)
+{
+    <h1>to high</h1>
+}
+else if(ViewBag.toHigh == 2){
+    <h1>to low</h1>
+}
+else if(ViewBag.toHigh == 3)
+{
+    <h1>correct!</h1>
+}
+
+@if(ViewBag.toHigh == 1 || ViewBag.toHigh == 2 || ViewBag.toHigh == null)
+{
+ 
+<h2>Guess my hidden number</h2>
+<form action="GuessingGame" method="post">
+    <input id="tempField" type="text" name="guess" />
+    <input id="tempButton" type="submit" value="guess!"/>
+</form>
+}
