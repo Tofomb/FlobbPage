@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FlobbPage.Models.Person>
+
+
+<div class="container">
+        <div class="row">
+            <div class="col col-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </div>
+          <!--   <div class="col col-2">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </div>
+            <div class="col col-2">
+                @Html.DisplayNameFor(model => model.City)
+            </div>-->
+            <div class="col col-4">
+                @Html.DisplayNameFor(model => model.Id)
+            </div>
+            <!-- <div class="col col-2"></div>-->
+        </div>
+@foreach (var item in Model) {
+        <div class="row">
+            <div class="col col-2">
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+         <!--    <div class="col col-2">
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </div>
+            <div class="col col-2">
+                @Html.DisplayFor(modelItem => item.City)
+            </div> -->
+            <div class="col col-4">
+                @Html.DisplayFor(modelItem => item.Id)
+            </div>
+        <!--     <div class="col col-2">
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
+            </div>-->
+        </div>
+}
+</div>

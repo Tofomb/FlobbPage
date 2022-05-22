@@ -37,7 +37,12 @@ a img {
     padding: 0;
     margin: 0;
 }
+
 </style>
+<head>       
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
 <body>
     <header>
         <ul class="headBox">
@@ -49,6 +54,7 @@ a img {
             <li class="HomeMenu"> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
             <li class="HomeMenu"> <a asp-area="" asp-controller="Doctor" asp-action="FeverCheck">Doctor</a></li>
             <li class="HomeMenu"> <a asp-area="" asp-controller="GamePlace" asp-action="GuessingGame">Guessing Game</a></li>
+            <li class="HomeMenu"> <a asp-area="" asp-controller="Person" asp-action="Index">Persons</a></li>
 
             <li> <a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
             <li> <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<FlobbPage.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    
+</head>
+<script>
+    
+
+function loadPersons(){
+    $.ajax({
+          url: '/Person/ViewPerson',
+          dataType: 'html',
+          success: function(data) {
+             $('#partPerson').html(data);
+          }
+    });
+}
+
+function deletePerson(){
+        $.ajax({
+          url: '/Person/DeleteLive/' + $('#personField').val() ,
+          dataType: 'html',
+          success: function(data) {
+             $('#partPersons').html(data);
+             $('#partPerson').html("");
+          }
+    });
+}
+
+function detailsPerson(){
+        $.ajax({
+          url: '/Person/GetDetails/' + $('#personField').val() ,
+          dataType: 'html',
+          success: function(data) {
+             $('#partPerson').html(data);
+          }
+    });
+}
+
+</script>
+
+
+<h1>Index</h1>
+<p>
+    <form action="~/Person/Index" method="post">
+        <table>
+        <tr>
+            <td>Search: </td>
+            <td><input type="text" name="search" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit Form" /></td>
+        </tr>
+    </table>
+    </form>
+</p>
+
+
+
+<p>
+    <form action="~/Person/Create" method="post">
+        <table>
+        <tr>
+            <td>Enter Name: </td>
+            <td><input type="text" name="txtName" /></td>
+        </tr>
+        <tr>
+            <td>Enter City: </td>
+            <td><input type="text" name="txtCity" /></td>
+        </tr>
+        <tr>
+            <td>Enter Phone Number: </td>
+            <td><input type="text" name="txtPhone" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit Form" /></td>
+        </tr>
+    </table>
+    </form>
+</p>
+
+<input type="text" name="search" id="personField"/>
+<button type="button" onclick="deletePerson()">Delete</button>
+<button type="button" onclick="detailsPerson()">Get Details</button>
+<button type="button" onclick="loadPersons()">Get People</button>
+ 
+
+
+<div id="partPersons">
+
+    
+</div>
+
+<div id="partPerson">
+</div>
+
+
+

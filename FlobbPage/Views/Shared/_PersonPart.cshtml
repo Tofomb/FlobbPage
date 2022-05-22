@@ -1,0 +1,32 @@
+﻿@model FlobbPage.Models.Person
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <div class="row">
+        <div class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+        <div class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </div>
+        <div class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.City)
+        </div>
+        <div class = "col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </div>
+    </div>
+</div>
